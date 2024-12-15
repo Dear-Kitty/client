@@ -24,7 +24,7 @@ export interface SignupProps extends LoginProps {
 
 const Signup = () => {
   const { userJoin } = useAuth();
-  const [isOpen, setIsOpen] = useState(false);
+  const [, setIsOpen] = useState(false);
   const isNicknameAvailable = useState(false);
   const {
     register,
@@ -150,7 +150,7 @@ const Signup = () => {
 
           <fieldset className="flex flex-col items-center">
             <div className="flex flex-col items-center py-5 text-center">
-              <Button size="medium" scheme="primary">
+              <Button size="medium" scheme="primary" onClick={handleValidate}>
                 회원가입
               </Button>
             </div>
