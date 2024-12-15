@@ -21,6 +21,11 @@ export default defineConfig({
       filename: 'sw.ts',
     }),
   ],
+  build: {
+    rollupOptions: {
+      input: '/index.html',
+    },
+  },
   server: {
     host: true,
     port: 3000,
