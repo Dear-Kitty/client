@@ -21,4 +21,8 @@ export default defineConfig({
       filename: 'sw.ts',
     }),
   ],
+  server: {
+    host: true,
+    port: 3000,
+  },
 });
