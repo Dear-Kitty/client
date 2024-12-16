@@ -59,13 +59,13 @@ const Login = () => {
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">
-      <div className="flex flex-col items-center md:justify-center mx-auto my-0 max-w-screen-md">
+      <div className="flex flex-col items-center">
         <Link className="w-[120px]" to="/">
           <img src={Logo} alt="디어키티 로고" />
         </Link>
 
-        <form className="flex flex-col items-center p-5 text-center" onSubmit={handleSubmit(onSubmit)}>
-          <fieldset className="py-2">
+        <form className="flex flex-col items-center py-5 w-full" onSubmit={handleSubmit(onSubmit)}>
+          <fieldset className="py-2 w-full">
             <InputText
               placeholder="이메일"
               inputType="email"
@@ -75,9 +75,9 @@ const Login = () => {
                 required: true,
               })}
             />
-            {errors.email && <p className="error-text">이메일을 입력해주세요.</p>}
+            {errors.email && <p className="error-text text-sm pt-1 pl-1">이메일을 입력해주세요.</p>}
           </fieldset>
-          <fieldset className="py-2">
+          <fieldset className="py-2 w-full">
             <InputText
               placeholder="비밀번호"
               inputType="password"
@@ -87,9 +87,9 @@ const Login = () => {
                 required: true,
               })}
             />
-            {errors.password && <p className="error-text">비밀번호를 입력해주세요.</p>}
+            {errors.password && <p className="error-text text-sm pt-1 pl-1">비밀번호를 입력해주세요.</p>}
           </fieldset>
-          <div className="flex flex-col items-center py-5 text-center">
+          <div className="flex flex-col items-center py-5 text-center w-full">
             <Button size="medium" scheme="primary">
               로그인
             </Button>

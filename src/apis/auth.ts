@@ -2,7 +2,7 @@ import ROUTES from '../constants/router';
 import { User } from '../pages/User/Join';
 import apiClient, { getAuthToken } from './apiClient';
 
-export const join = async (userData: User) => {
+export const createUser = async (userData: User) => {
   try {
     const token = await getAuthToken();
 
@@ -19,25 +19,26 @@ export const join = async (userData: User) => {
 
 export const getUser = async () => {
   try {
-    const response = await apiClient.get('/users');
+    const response = await apiClient.get(ROUTES.USER);
     return response.data;
   } catch (error) {
-    console.error('회원정보가 없습니다: ', error);
+    console.error(`회원정보가 없습니다: ${error}`);
     throw new Error(`회원정보 조회 실패:  ${error}`);
   }
 };
 
 export interface updateUserProps {
   nickname?: string;
-  picURL?: string;
-  myTeam?: number;
+  age?: string;
+  job?: string;
 }
+
 export const updateUser = async (data: updateUserProps) => {
   try {
-    const response = await apiClient.put('/users', data);
+    const response = await apiClient.put(ROUTES.UPDATE, data);
     return response.data;
   } catch (error) {
-    console.error('회원정보 수정 실패했습니다.: ', error);
+    console.error('회원정보 수정에 실패했습니다.: ', error);
     throw new Error(`회원정보 수정 실패:  ${error}`);
   }
 };

@@ -8,7 +8,8 @@ import ROUTES from './constants/router';
 // const Chat = lazy(() => import('./pages/Chat/Chat'));
 const User = lazy(() => import('./pages/User/User'));
 const Login = lazy(() => import('./pages/User/Login'));
-const Signup = lazy(() => import('./pages/User/Join'));
+const Join = lazy(() => import('./pages/User/Join'));
+const GetInfo = lazy(() => import('./pages/User/GetInfo'));
 const router = createBrowserRouter([
   {
     path: ROUTES.HOME,
@@ -35,7 +36,15 @@ const router = createBrowserRouter([
         path: ROUTES.JOIN,
         element: (
           <Suspense fallback={<Loading />}>
-            <Signup />
+            <Join />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.JOIN_GETINFO,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <GetInfo />
           </Suspense>
         ),
       },

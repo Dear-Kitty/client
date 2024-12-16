@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { join } from '../apis/auth';
+import { createUser } from '../apis/auth';
 import { showToast } from '../components/Common/Toast';
 import ROUTES from '../constants/router';
 import { User } from '../pages/User/Join';
@@ -15,8 +15,12 @@ export const useAuth = () => {
     navigate(ROUTES.HOME);
   };
 
+  const userGetInfo = async () => {
+    navigate(ROUTES.JOIN_GETINFO);
+  };
+
   const userJoin = async (data: User) => {
-    const response = await join(data);
+    const response = await createUser(data);
     navigate(ROUTES.LOGIN);
     showToast('회원가입이 완료되었습니다.', 'success');
     return response;
@@ -24,6 +28,7 @@ export const useAuth = () => {
 
   return {
     userLogin,
+    userGetInfo,
     userJoin,
   };
 };

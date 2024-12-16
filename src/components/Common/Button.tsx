@@ -9,9 +9,9 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const DEFAULT_STYLE = 'inline-flex items-center justify-center font-bold text-white text-2xl';
 const SIZE_MAP: Record<ButtonSize, string> = {
-  large: 'w-[280px] h-36 rounded-2xl',
-  medium: 'w-[280px] h-16 rounded-2xl',
-  small: 'w-[280px] h-12 rounded-2xl',
+  large: 'w-full h-36 rounded-2xl',
+  medium: 'w-full h-16 rounded-2xl',
+  small: 'w-full h-12 rounded-2xl',
 };
 const SCHEME_MAP: Record<ButtonScheme, string> = {
   primary: 'bg-button-primary',

@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 
 const Content = () => {
   return (
-    <div className="w-100 absolute left-0 top-0 w-full px-3 pt-[65px] md:left-[100px] md:w-[calc(100%-100px)] xl:left-1/4 xl:w-2/4">
-      <div className="mx-auto my-0 max-w-screen-md">
+    <div className="absolute w-full h-full">
+      <div className="w-full h-full max-w-[440px] max-h-[956px] px-[40px] py-[40px] justify-self-center">
         <Outlet />
       </div>
     </div>

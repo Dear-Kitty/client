@@ -2,7 +2,7 @@ import React, { ForwardedRef } from 'react';
 
 type InputSize = 'large' | 'medium' | 'small';
 type InputScheme = 'primary' | 'secondary' | 'danger';
-type InputType = 'text' | 'email' | 'password' | 'number' | 'nickname';
+type InputType = 'text' | 'email' | 'password' | 'nickname' | 'age' | 'job';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
@@ -12,9 +12,9 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const SIZE_MAP: Record<InputSize, string> = {
-  large: 'w-full h-[45px] shrink-0 p-4',
-  medium: 'w-80 h-[45px] shrink-0 px-2',
-  small: 'w-[280px] h-[45px] shrink-0 px-2',
+  large: 'w-full h-[45px] shrink-0 px-4 rounded-2xl',
+  medium: 'w-full h-[45px] shrink-0 px-4 rounded-2xl',
+  small: 'w-full h-[45px] shrink-0 px-4 rounded-2xl',
 };
 
 const SCHEME_MAP: Record<InputScheme, string> = {
